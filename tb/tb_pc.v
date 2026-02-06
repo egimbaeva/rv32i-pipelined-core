@@ -2,35 +2,31 @@
 
 module tb_pc;
 
-  // 1️⃣ Сигналы (провода и регистры)
   reg clk;
   reg reset;
   reg [31:0] pc_next;
-  wire [31:0] pc;
+  wire [31:0] pc_current;
 
-  // 2️⃣ Подключаем твой PC модуль
   pc dut (
     .clk(clk),
     .reset(reset),
     .pc_next(pc_next),
-    .pc(pc)
+    .pc_current(pc_current)
   );
 
-  // 3️⃣ Генератор тактового сигнала
-  always #5 clk = ~clk;  // период = 10ns
-
-  // 4️⃣ Основной тест
+  always #5 clk = ~clk;  
+ 
   initial begin
-    // начальные значения
+   $dumpfile("pc.vcd");
+   $dumpvars(0, tb_pc);
+
     clk = 0;
     reset = 1;
     pc_next = 32'd0;
 
-    // подержим reset
     #10;
     reset = 0;
 
-    // 5 тактов — меняем pc_next
     pc_next = 32'd4;   #10;
     pc_next = 32'd8;   #10;
     pc_next = 32'd12;  #10;
