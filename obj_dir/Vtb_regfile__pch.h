@@ -3,10 +3,10 @@
 //
 // Internal details; most user sources do not need this header,
 // unless using verilator public meta comments.
-// Suggest use Vpc.h instead.
+// Suggest use Vtb_regfile.h instead.
 
-#ifndef VERILATED_VPC__PCH_H_
-#define VERILATED_VPC__PCH_H_  // guard
+#ifndef VERILATED_VTB_REGFILE__PCH_H_
+#define VERILATED_VTB_REGFILE__PCH_H_  // guard
 
 // GCC and Clang only will precompile headers (PCH) for the first header.
 // So, make sure this is the one and only PCH.
@@ -19,8 +19,8 @@
 
 #include "verilated.h"
 
-#include "Vpc__Syms.h"
-#include "Vpc.h"
+#include "Vtb_regfile__Syms.h"
+#include "Vtb_regfile.h"
 
 // Additional include files added using '--compiler-include'
 

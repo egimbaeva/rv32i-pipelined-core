@@ -4,15 +4,20 @@ module tb_imem;
     wire [31:0] instr;
 
     imem dut (
-        .pc(pc),
+        .pc_current(pc),
         .instr(instr)
     );
 
+    integer i;
+
     initial begin
         pc = 0;
-        #10 pc = 4;
-        #10 pc = 8;
-        #10 pc = 12;
+
+        // двигаем PC по словам
+        for (i = 0; i < 4; i = i + 1) begin
+            #10 pc = pc + 4;
+        end
+
         #10 $finish;
     end
 

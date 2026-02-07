@@ -4,24 +4,24 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef VERILATED_VPC__SYMS_H_
-#define VERILATED_VPC__SYMS_H_  // guard
+#ifndef VERILATED_VTB_REGFILE__SYMS_H_
+#define VERILATED_VTB_REGFILE__SYMS_H_  // guard
 
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 
 // INCLUDE MODEL CLASS
 
-#include "Vpc.h"
+#include "Vtb_regfile.h"
 
 // INCLUDE MODULE CLASSES
-#include "Vpc___024root.h"
+#include "Vtb_regfile___024root.h"
 
 // SYMS CLASS (contains all model state)
-class alignas(VL_CACHE_LINE_BYTES) Vpc__Syms final : public VerilatedSyms {
+class alignas(VL_CACHE_LINE_BYTES) Vtb_regfile__Syms final : public VerilatedSyms {
   public:
     // INTERNAL STATE
-    Vpc* const __Vm_modelp;
+    Vtb_regfile* const __Vm_modelp;
     bool __Vm_dumping = false;  // Dumping is active
     VerilatedMutex __Vm_dumperMutex;  // Protect __Vm_dumperp
     VerilatedVcdC* __Vm_dumperp VL_GUARDED_BY(__Vm_dumperMutex) = nullptr;  /// Trace class for $dump*
@@ -31,11 +31,11 @@ class alignas(VL_CACHE_LINE_BYTES) Vpc__Syms final : public VerilatedSyms {
     bool __Vm_didInit = false;
 
     // MODULE INSTANCE STATE
-    Vpc___024root                  TOP;
+    Vtb_regfile___024root          TOP;
 
     // CONSTRUCTORS
-    Vpc__Syms(VerilatedContext* contextp, const char* namep, Vpc* modelp);
-    ~Vpc__Syms();
+    Vtb_regfile__Syms(VerilatedContext* contextp, const char* namep, Vtb_regfile* modelp);
+    ~Vtb_regfile__Syms();
 
     // METHODS
     const char* name() const { return TOP.vlNamep; }

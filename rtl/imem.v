@@ -1,12 +1,13 @@
+`timescale 1ns/1ps
 module imem (
-    input  wire [31:0] pc,
+    input  wire [31:0] pc_current,
     output wire [31:0] instr
 );
 
     reg [31:0] mem [0:15]; // 16 инструкций 
 
     // combinational read
-    assign instr = mem[pc[31:2]];
+    assign instr = mem[pc_current[5:2]];
 
     initial begin
         mem[0] = 32'h00000013; // nop (addi x0, x0, 0)

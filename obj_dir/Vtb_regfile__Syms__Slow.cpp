@@ -1,9 +1,9 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Symbol table implementation internals
 
-#include "Vpc__pch.h"
+#include "Vtb_regfile__pch.h"
 
-Vpc__Syms::Vpc__Syms(VerilatedContext* contextp, const char* namep, Vpc* modelp)
+Vtb_regfile__Syms::Vtb_regfile__Syms(VerilatedContext* contextp, const char* namep, Vtb_regfile* modelp)
     : VerilatedSyms{contextp}
     // Setup internal state of the Syms class
     , __Vm_modelp{modelp}
@@ -11,7 +11,7 @@ Vpc__Syms::Vpc__Syms(VerilatedContext* contextp, const char* namep, Vpc* modelp)
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(152);
+    Verilated::stackCheck(226);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
@@ -22,18 +22,18 @@ Vpc__Syms::Vpc__Syms(VerilatedContext* contextp, const char* namep, Vpc* modelp)
     // Setup scopes
 }
 
-Vpc__Syms::~Vpc__Syms() {
+Vtb_regfile__Syms::~Vtb_regfile__Syms() {
     if (__Vm_dumping) _traceDumpClose();
     // Tear down scopes
     // Tear down sub module instances
 }
 
-void Vpc__Syms::_traceDump() {
+void Vtb_regfile__Syms::_traceDump() {
     const VerilatedLockGuard lock{__Vm_dumperMutex};
     __Vm_dumperp->dump(VL_TIME_Q());
 }
 
-void Vpc__Syms::_traceDumpOpen() {
+void Vtb_regfile__Syms::_traceDumpOpen() {
     const VerilatedLockGuard lock{__Vm_dumperMutex};
     if (VL_UNLIKELY(!__Vm_dumperp)) {
         __Vm_dumperp = new VerilatedVcdC();
@@ -44,7 +44,7 @@ void Vpc__Syms::_traceDumpOpen() {
     }
 }
 
-void Vpc__Syms::_traceDumpClose() {
+void Vtb_regfile__Syms::_traceDumpClose() {
     const VerilatedLockGuard lock{__Vm_dumperMutex};
     __Vm_dumping = false;
     VL_DO_CLEAR(delete __Vm_dumperp, __Vm_dumperp = nullptr);
