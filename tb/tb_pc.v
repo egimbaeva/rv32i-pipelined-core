@@ -5,13 +5,13 @@ module tb_pc;
   reg clk;
   reg reset;
   reg [31:0] pc_next;
-  wire [31:0] pc_current;
+  wire [31:0] pc;
 
   pc dut (
     .clk(clk),
     .reset(reset),
     .pc_next(pc_next),
-    .pc_current(pc_current)
+    .pc(pc)
   );
 
   always #5 clk = ~clk;  
